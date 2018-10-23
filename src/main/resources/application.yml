@@ -1,0 +1,19 @@
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://eureka-service.local.pcfdev.io/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+# Increase the Hystrix timeout to 60s (for all)
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
