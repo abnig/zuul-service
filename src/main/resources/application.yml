@@ -1,6 +1,8 @@
 zuul:
-  #Service will be mapped under the /api URI
-  prefix: /api
+  routes:
+    employee-service:
+      path: /employee/**
+      serviceId: employee-service
 
 eureka:
   client:
